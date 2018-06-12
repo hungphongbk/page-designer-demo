@@ -10,10 +10,10 @@
 
     <div class="panel-row">
       <icon name="film"/>
-      <div class="panel-label">选择动画</div>
+      <div class="panel-label">Select animation</div>
       <div class="panel-value">
         <select v-model="currentName">
-          <option value="">无</option>
+          <option value="">None</option>
           <option v-for="(val, index) in animationNames" :key="index" :value="val">{{ val }}</option>
         </select>
       </div>
@@ -23,39 +23,39 @@
       <hr>
       <div class="panel-row">
         <icon name="type"/>
-        <div class="panel-label">动画名称</div>
+        <div class="panel-label">Animation name</div>
         <div class="panel-value">
-          <input type="text" v-model.trim="currentAnimation.name" @input="validateName" placeholder="动画名称，仅限英文">
+          <input type="text" v-model.trim="currentAnimation.name" @input="validateName">
         </div>
       </div>
 
       <div class="panel-row">
         <icon name="clock"/>
-        <div class="panel-label">动画时长</div>
+        <div class="panel-label">Duration</div>
         <div class="panel-value">
-          <input type="text" v-model.number="currentAnimation.duration" placeholder="请输入大于0的数字">
+          <input type="text" v-model.number="currentAnimation.duration">
         </div>
       </div>
 
       <div class="panel-row">
         <icon name="watch"/>
-        <div class="panel-label">动画延迟</div>
+        <div class="panel-label">Delay</div>
         <div class="panel-value">
-          <input type="text" v-model.number="currentAnimation.delay" placeholder="请输入不小于0的数字">
+          <input type="text" v-model.number="currentAnimation.delay">
         </div>
       </div>
 
       <div class="panel-row">
         <icon name="repeat"/>
-        <div class="panel-label">动画循环</div>
+        <div class="panel-label">Repeat</div>
         <div class="panel-value">
-          <input type="text" v-model.number="currentAnimation.iteration" placeholder="输入0表示无限循环">
+          <input type="text" v-model.number="currentAnimation.iteration">
         </div>
       </div>
 
       <div class="panel-row">
         <icon name="activity"/>
-        <div class="panel-label">缓动函数</div>
+        <div class="panel-label">Timing easing</div>
         <div class="panel-value">
           <select v-model="currentAnimation.timing">
             <option>linear</option>
@@ -69,7 +69,7 @@
 
       <div class="panel-row">
         <icon name="rotate-cw"/>
-        <div class="panel-label">动画方向</div>
+        <div class="panel-label">Direction</div>
         <div class="panel-value">
           <select v-model="currentAnimation.direction">
             <option>normal</option>
@@ -82,7 +82,7 @@
 
       <div class="panel-row">
         <icon name="chevrons-down"/>
-        <div class="panel-label">fill-mode</div>
+        <div class="panel-label">Fill mode</div>
         <div class="panel-value">
           <select v-model="currentAnimation.fill">
             <option>none</option>
@@ -108,7 +108,7 @@
         <div style="margin: 10px 0 0 20px;">
           <button v-if="i + 1 === currentAnimation.keyframes.length" class="btn btn-primary" @click="addkeyframe">
             <icon name="plus"/>
-            添加新的动画
+            Add new animation
           </button>
         </div>
       </div>
@@ -144,7 +144,7 @@
 
         if (this.$store.state.animation.some(val => val.name === '')) {
           this.$store.$emit('notify', {
-            info: '还有未命名动画，请先命名'
+            info: 'There are unnamed animations, please name them first'
           });
           return;
         }
@@ -162,7 +162,7 @@
         var name = this.currentAnimation.name;
         if (name === '') {
           this.$store.$emit('notify', {
-            info: '请先为动画命名'
+            info: 'Please name the animation first'
           });
           return;
         }
@@ -177,7 +177,7 @@
             this.currentAnimation.name = '';
           });
           this.$store.$emit('notify', {
-            info: '动画名称必须以英文开头'
+            info: 'Animation name must begin with English'
           });
         }
 
@@ -186,7 +186,7 @@
             this.currentAnimation.name = value.replace(/\W/g, '');
           });
           this.$store.$emit('notify', {
-            info: '请勿使用英文和数字以外的字符'
+            info: 'Do not use characters other than English and numbers'
           });
         }
       },
