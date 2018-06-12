@@ -3,7 +3,7 @@
     <div class="box">
       <div class="top">
         <span>{{ title }}</span>
-        <icon class="close" name="x" @click="close" />
+        <icon class="close" name="x" @click="close"/>
       </div>
       <div class="body">
         <slot>{{ content }}</slot>
@@ -16,22 +16,22 @@
   </div>
 </template>
 <script>
-export default {
-  props: ['title', 'id', 'content'],
-  data () {
-    return {
-      show: false
-    }
-  },
-  methods: {
-    close () {
-      this.show = false
+  export default {
+    props: ['title', 'id', 'content'],
+    data() {
+      return {
+        show: false
+      };
     },
-    confirm () {
-      this.$emit('confirm', this.id)
+    methods: {
+      close() {
+        this.show = false;
+      },
+      confirm() {
+        this.$emit('confirm', this.id);
+      }
     }
-  }
-}
+  };
 </script>
 <style scoped>
   .mask {
@@ -46,22 +46,26 @@ export default {
     justify-content: center;
     align-items: center;
   }
+
   .box {
     width: 520px;
     background-color: #fff;
     border-radius: 4px;
   }
+
   .top {
     height: 50px;
     line-height: 50px;
     border-bottom: 1px solid #f2f2f2;
     padding: 0 20px;
   }
+
   .body {
     padding: 20px;
     font-size: 14px;
     color: #999;
   }
+
   .footer {
     height: 50px;
     line-height: 50px;
@@ -69,6 +73,7 @@ export default {
     padding-top: 9px;
     padding-right: 20px;
   }
+
   i.close {
     color: #ccc;
     cursor: pointer;
@@ -76,9 +81,11 @@ export default {
     float: right;
     font-size: 24px;
   }
+
   i.close:hover {
     color: #a5a5a5;
   }
+
   .btn {
     display: inline-block;
     border: none;
@@ -96,6 +103,7 @@ export default {
     font-size: 12px;
     float: right;
   }
+
   .btn:hover {
     background-color: #f2f2f2;
   }

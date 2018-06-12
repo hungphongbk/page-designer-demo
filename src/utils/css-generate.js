@@ -8,40 +8,40 @@
  *
  * @return { String }
  */
-export function getAnimateCss (name, animation, stops, needFormat = true) {
-  var properties = ['duration', 'timing', 'delay', 'iteration', 'direction', 'fill']
-  var values = [name]
+export function getAnimateCss(name, animation, stops, needFormat = true) {
+  var properties = ['duration', 'timing', 'delay', 'iteration', 'direction', 'fill'];
+  var values = [name];
 
   properties.map(val => {
-    if (animation[val] === undefined) return
+    if (animation[val] === undefined) return;
     if (val === 'duration' || val === 'delay') {
-      values.push(animation[val] + 's')
+      values.push(animation[val] + 's');
     } else if (val === 'iteration') {
-      values.push(animation[val] === 0 ? 'infinite' : animation[val])
+      values.push(animation[val] === 0 ? 'infinite' : animation[val]);
     } else {
-      values.push(animation[val])
+      values.push(animation[val]);
     }
-  })
+  });
 
-  var animateCss = 'animation: ' + values.join(' ') + ';'
+  var animateCss = 'animation: ' + values.join(' ') + ';';
 
-  // 生成 keyframes 代码
-  var keyframes = []
+
+  var keyframes = [];
   if (needFormat) {
     stops.map(val => {
-      keyframes.push('\t' + val.stop + '% {\n')
-      keyframes.push('\t\t' + val.css + '\n\t}\n')
-    })
+      keyframes.push('\t' + val.stop + '% {\n');
+      keyframes.push('\t\t' + val.css + '\n\t}\n');
+    });
   } else {
     stops.map(val => {
-      keyframes.push(val.stop + '% {')
-      keyframes.push(val.css + '}')
-    })
+      keyframes.push(val.stop + '% {');
+      keyframes.push(val.css + '}');
+    });
   }
-  var keyframeCss = keyframes.join('')
+  var keyframeCss = keyframes.join('');
 
   var output =
-`
+    `
 .anm-${name} {
   -webkit-${animateCss}
   ${animateCss}
@@ -50,6 +50,6 @@ export function getAnimateCss (name, animation, stops, needFormat = true) {
 ${keyframeCss}}
 @-webkit-keyframes ${name} {
 ${keyframeCss}}
-`
-  return output
+`;
+  return output;
 }

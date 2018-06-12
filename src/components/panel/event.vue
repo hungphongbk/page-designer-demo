@@ -1,7 +1,7 @@
 <template>
   <div class="panel-wrap" v-if="tab === 2">
     <div class="panel-row">
-      <icon name="link" />
+      <icon name="link"/>
       <div class="panel-label">点击时</div>
     </div>
 
@@ -15,7 +15,7 @@
 </template>
 
 <script>
-export default {
-  props: ['activeElement', 'tab']
-}
+  export default {
+    props: ['activeElement', 'tab']
+  };
 </script>

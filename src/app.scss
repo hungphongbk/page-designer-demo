@@ -1,15 +1,9 @@
-// Define variables to override default ones
 @import "variables";
-
 @import "node_modules/spectre.css/src/mixins";
 @import "node_modules/spectre.css/src/base";
 @import "node_modules/spectre.css/src/utilities";
-
-// Layout
 @import "node_modules/spectre.css/src/layout";
 @import "node_modules/spectre.css/src/navbar";
-
-// Import only the needed components
 @import "node_modules/spectre.css/src/buttons";
 @import "node_modules/spectre.css/src/forms";
 @import "node_modules/spectre.css/src/tabs";
@@ -21,9 +15,11 @@ body,
 .app {
   height: 100%;
 }
+
 html {
   font-size: 18px;
 }
+
 body {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", sans-serif;
   padding: 0;
@@ -36,6 +32,7 @@ textarea {
   @extend .form-input;
   @extend .input-sm;
 }
+
 input[type="color"] {
   cursor: pointer;
   width: 24px;
@@ -51,15 +48,18 @@ input[type="color"] {
     border: 1px solid $primary-color;
   }
 }
+
 select {
   @extend .form-select;
   @extend .select-sm;
 }
+
 .layer {
   &:hover {
     outline: 1px solid #ddd !important;
   }
 }
+
 .g-active {
   outline: 1px solid #2196f3 !important;
   &:hover {

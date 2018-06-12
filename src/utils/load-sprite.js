@@ -1,29 +1,28 @@
-// Load a sprite
 export default function (url, id) {
-  var x = new XMLHttpRequest()
+  var x = new XMLHttpRequest();
 
-  // If the id is set and sprite exists, bail
+
   if (document.querySelector('#' + id)) {
-    return
+    return;
   }
 
-  // Create placeholder (to prevent loading twice)
-  var container = document.createElement('div')
-  container.setAttribute('hidden', '')
-  container.setAttribute('id', id)
-  document.body.insertBefore(container, document.body.childNodes[0])
 
-  // Check for CORS support
+  var container = document.createElement('div');
+  container.setAttribute('hidden', '');
+  container.setAttribute('id', id);
+  document.body.insertBefore(container, document.body.childNodes[0]);
+
+
   if ('withCredentials' in x) {
-    x.open('GET', url, true)
+    x.open('GET', url, true);
   } else {
-    return
+    return;
   }
 
-  // Inject hidden div with sprite on load
+
   x.onload = function () {
-    container.innerHTML = x.responseText
-  }
+    container.innerHTML = x.responseText;
+  };
 
-  x.send()
+  x.send();
 }
