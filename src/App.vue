@@ -106,7 +106,7 @@
     box-sizing: content-box;
     &.column {
       flex: none;
-      width: 120px;
+      width: 220px;
     }
   }
 

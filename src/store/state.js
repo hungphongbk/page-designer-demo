@@ -18,7 +18,7 @@ export default {
   activeElement: {},
   page: {
     page: true,
-    title: '测试页面',
+    title: 'Test page',
     height: 1500,
     endTime: new Date(),
     backgroundColor: '#fff'

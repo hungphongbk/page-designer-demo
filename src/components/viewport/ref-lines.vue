@@ -50,14 +50,7 @@
 
         return guides;
       },
-      /**
-       * 获取参考线
-       *
-       * 取画布中线以及每个元件上下边的坐标
-       * 排除正在移动的元件
-       * 排除画布边缘坐标
-       * 排除重复坐标
-       */
+
       horiz() {
         var guides = this.guides;
         var cor = [];

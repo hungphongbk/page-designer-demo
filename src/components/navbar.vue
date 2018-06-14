@@ -5,17 +5,17 @@
         <icon name="anchor"/>
       </section>
       <section class="navbar-section">
-        <a class="btn btn-link tooltip tooltip-bottom" data-tooltip="复制元件 Ctrl + C" @click="copyWidget">
+        <a class="btn btn-link tooltip tooltip-bottom" data-tooltip="Copy element (Ctrl + C)" @click="copyWidget">
           <icon name="copy"/>
-          复制
+          Copy
         </a>
-        <a class="btn btn-link tooltip tooltip-bottom" data-tooltip="删除元件 Delete" @click="dele">
+        <a class="btn btn-link tooltip tooltip-bottom" data-tooltip="Delete (Delete)" @click="dele">
           <icon name="trash-2"/>
-          删除
+          Delete
         </a>
-        <a @click="save" class="btn btn-link tooltip tooltip-bottom" data-tooltip="保存 Ctrl + S">
+        <a @click="save" class="btn btn-link tooltip tooltip-bottom" data-tooltip="Save (Ctrl + S)">
           <icon name="save"/>
-          保存</a>
+          Save</a>
       </section>
     </div>
   </header>

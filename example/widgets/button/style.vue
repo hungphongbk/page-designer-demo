@@ -3,7 +3,7 @@
     <hr>
     <div class="panel-row">
       <icon name="target" />
-      <div class="panel-label">背景色</div>
+      <div class="panel-label">Background color</div>
       <div class="panel-value">{{ activeElement.bgColor }}</div>
       <div class="panel-value">
         <input type="color" v-model="activeElement.bgColor">
@@ -12,7 +12,7 @@
 
     <div class="panel-row">
       <icon name="image" />
-      <div class="panel-label">背景图</div>
+      <div class="panel-label">Background image</div>
       <div class="panel-value">
         <div class="panel-preview"
           @click="addPic"
@@ -24,7 +24,7 @@
 
     <div class="panel-row">
       <icon name="edit-3" />
-      <div class="panel-label">文字颜色</div>
+      <div class="panel-label">Text color</div>
       <div class="panel-value">{{ activeElement.color }}</div>
       <div>
         <input type="color" v-model="activeElement.color">
