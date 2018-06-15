@@ -29,7 +29,7 @@
     "nanoid": "^1.0.1",
     "spectre.css": "^0.5.0",
     "vue": "^2.5.11",
-    "vue-page-designer-widgets": "^0.1.1"
+    "vue-page-designer-widgets": "https://github.com/hungphongbk/vue-page-designer-widgets.git"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

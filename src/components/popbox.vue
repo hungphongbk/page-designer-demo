@@ -9,8 +9,8 @@
         <slot>{{ content }}</slot>
       </div>
       <div class='footer'>
-        <button class="btn" @click="confirm">确定</button>
-        <button class="btn" @click="close">取消</button>
+        <button class="btn" @click="confirm">Confirm</button>
+        <button class="btn" @click="close">Close</button>
       </div>
     </div>
   </div>

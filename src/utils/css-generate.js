@@ -1,13 +1,4 @@
-/**
- * 用于生成动画 keyframes 字符串
- *
- * @name { String } animation-name
- * @animation { Object } animation's properties
- * @stops { Array } key frames
- * @needFormat { Boolean } default is true
- *
- * @return { String }
- */
+
 export function getAnimateCss(name, animation, stops, needFormat = true) {
   var properties = ['duration', 'timing', 'delay', 'iteration', 'direction', 'fill'];
   var values = [name];
